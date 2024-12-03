@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito</title>
+</head>
+<body>
+    <h2>Tu Carrito</h2>
+    {% for product in cart_products %}
+    <div class="cart-item">
+        <h3>{{ product['name'] }}</h3>
+        <p>Precio: ${{ product['price'] }}</p>
+    </div>
+    {% endfor %}
+    <a href="{{ url_for('checkout') }}">Proceder al pago</a>
+</body>
+</html>
